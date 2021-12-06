@@ -4,9 +4,9 @@ variable "public_subnet_numbers" {
   description = "Map of AZ to a number that should be used for public subnets"
  
   default = {
-    "us-east-2a" = 1
-    "us-east-2b" = 2
-    "us-east-2c" = 3
+    "us-east-1a" = 1
+    "us-east-1b" = 2
+    "us-east-1c" = 3
   }
 }
  
@@ -16,9 +16,9 @@ variable "private_subnet_numbers" {
   description = "Map of AZ to a number that should be used for private subnets"
  
   default = {
-    "us-east-2a" = 4
-    "us-east-2b" = 5
-    "us-east-2c" = 6
+    "us-east-1a" = 4
+    "us-east-1b" = 5
+    "us-east-1c" = 6
   }
 }
  

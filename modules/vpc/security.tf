@@ -6,7 +6,6 @@ resource "aws_security_group" "public" {
   tags = {
     Name        = "cloud-${var.infra_env}-public-sg"
     Role        = "public"
-    Project     = "cloud.io"
     Environment = var.infra_env
     ManagedBy   = "terraform"
   }
@@ -61,7 +60,6 @@ resource "aws_security_group" "private" {
   tags = {
     Name        = "cloud-${var.infra_env}-private-sg"
     Role        = "private"
-    Project     = "cloud.io"
     Environment = var.infra_env
     ManagedBy   = "terraform"
   }

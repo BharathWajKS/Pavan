@@ -1,11 +1,9 @@
 # Create a VPC for the region associated with the AZ
-
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
  
   tags = {
-    Name        = "cloud-${var.infra_env}-vpc"
-    Project     = "cloud.io"
+    Name        = "cloudcasts-${var.infra_env}-vpc"
     Environment = var.infra_env
     ManagedBy   = "terraform"
   }
@@ -22,8 +20,7 @@ resource "aws_subnet" "public" {
   cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.value)
  
   tags = {
-    Name        = "cloud-${var.infra_env}-public-subnet"
-    Project     = "cloud.io"
+    Name        = "cloudcasts-${var.infra_env}-public-subnet"
     Role        = "public"
     Environment = var.infra_env
     ManagedBy   = "terraform"
@@ -42,8 +39,7 @@ resource "aws_subnet" "private" {
   cidr_block = cidrsubnet(aws_vpc.vpc.cidr_block, 4, each.value)
  
   tags = {
-    Name        = "cloud-${var.infra_env}-private-subnet"
-    Project     = "cloud.io"
+    Name        = "cloudcasts-${var.infra_env}-private-subnet"
     Role        = "private"
     Environment = var.infra_env
     ManagedBy   = "terraform"
